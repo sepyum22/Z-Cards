@@ -1,0 +1,183 @@
+.titre {
+    justify-content: center;
+    display: flex;                  /* permet d'aligner horizontalement */
+    background-color: rgb(66, 0, 0);
+    align-items: center;            /* aligne verticalement le texte avec l'image */
+    gap: 20px;                      /* ajoute un espace entre l'image et le texte */
+    text-align: center; /* centre le titre */
+    margin-bottom: 20px; /* espace entre le titre et les cartes */
+}
+
+
+.background {
+    background-color: rgb(241, 102, 35);
+    display: flex;
+}
+
+
+.bloc-1 {
+    width: 70%;
+}
+
+
+.bloc-2 {
+    width: 30%;
+}
+
+/* custom du conteneur */
+.logo-container {
+    position: fixed;
+    top: 10px;
+    left: 10px; 
+    z-index: 1000; /* affiche le logo au dessus des autres éléments (ca m'a sauvé) */
+    margin-bottom: 30px;
+}
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    width: 100px;
+    height: 50px;
+}
+
+.content, .titre, .bloc_sous_titres {
+    position: relative;
+    z-index: 1; /
+}
+/* custom du logo */
+.logo {
+    position: fixed;
+    width: 300px;
+    height: auto;
+    margin-right: 1200px;
+}
+.leftimage{
+    width: 500px;
+}
+
+.containerh{
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: 'Saiyan Sans';
+    src: url('Saiyan-Sans.ttf') format('truetype');
+}
+h1{
+    font-family: 'Saiyan Sans', sans-serif;
+    color: rgb(239, 255, 148);
+    font-size: 40px;
+}
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20;
+    font-family: 'Saiyan Sans', sans-serif;
+    color: cornsilk;
+}
+
+.pic{
+    display: block; /* pour que l'image se comporte comme un bloc */
+    margin: 20px auto; /* centre l'image horizontalement */
+    width: 100%; /* permet de grossir la taille de l'image par rapport au conteneur */
+    height: auto;
+    margin-top: 600px; /* décale l'image vers le haut de 40 pixels */
+    margin-right: 600px;
+} 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 0; /* supprime tout espace entre les cartes*/
+    margin: 0 auto; /* centre le conteneur */
+    padding-top: 20px; /* ajoute de l'espace entre le conteneur et le titre */
+    margin: right 300px;
+    margin-top: 60px;
+}
+
+.card {
+    width: 150px;
+    height: auto; 
+    transition: transform 0.3s ease; 
+    margin-left: -30px;
+    position: relative;
+    width: 250px; 
+}
+
+/* pour avoir un effet de survol */
+.card:hover {
+    z-index: 10; /* la carte passe devant les autres */
+    transform: scale(1.1); /* agrandit légèrement la carte au survol */
+}
+.left-paragraph, .left-paragraph2 {
+    /* style déjà défini pour left-paragraph */
+    margin: 20px;
+    padding: 15px;
+    border: 5px solid black;
+    background-color: #f0f0f0;
+    width: fit-content;
+    background-image: url(paysage.jpg);
+    font-family: fantasy;
+    font-size: 25px;
+    color: antiquewhite;
+}
+.text-image-container {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    margin-right: 15px;
+    width: 150px;
+    height: auto; 
+}
+
+p {
+    flex: 1;
+    .card {
+        width: 100%; /* Occupe toute la largeur de l'écran mobile */
+        max-width: 300px; /* Limite la largeur sur les écrans plus larges */
+        height: auto; /* Maintient le ratio d'aspect */
+    }
+    
+    /* Pour la version mobile */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+      }
+    
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .left-paragraph, .left-paragraph2 {
+            width: 90%;
+            margin: auto;
+        }
+    
+        #background-video {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.left-paragraph, .left-paragraph2 {
+    background-image: url('paysage.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 20px; 
+    border-radius: 10px;
+    margin: 20px 0;
+    opacity: 0.9; 
+}
